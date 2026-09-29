@@ -8,6 +8,18 @@ This repository contains an independently maintained and updated version of PvMP
 
 ## Patch Notes
 
+### Latest Release — v4.3.2 (2026/09/29)
+
+- Added troll spawn locations to the Ettenmoors map.
+  - Trolls spawn in fixed positions and are used by several quests, so their spawn points are now marked on the map with a troll icon.
+  - Twenty spawn locations are included, covering Tírith Rhaw, the River Outpost and Lugazag area, Grimwood, the southern Ettenmoors and the western edge of the map.
+- Added "Hide/Show Teleports" and "Hide/Show Trolls" buttons to the map window, stacked above the "Show own position" button.
+  - Each button hides or shows its set of markers and updates its text to match.
+  - The chosen state is saved per character and restored when the plugin loads.
+- Added German, French and Russian translations for the new map buttons.
+
+See the **[Ettenmoors Map](#ettenmoors-map)** section for how to add further troll locations.
+
 For the complete historical development history of PvMP+, including all releases from **v1.0 through v3.3** by Glubby and **v4.0 through v4.3** of PvMP+ Revisited by Urundus, see:
 
 **[View Full Patch Notes](PATCH_NOTES.md)**
@@ -203,12 +215,34 @@ The map provides information about:
 * PvMP hotspots
 * Player position callouts
 * Map travel locations
+* Troll spawn locations
+
+Teleport and troll markers can each be toggled with the "Hide/Show Teleports" and "Hide/Show Trolls" buttons, which sit above the "Show own position" button in the bottom right of the map window. Both states are saved per character.
 
 The map can also be accessed using:
 
 ```text
 /pvmp+ map
 ```
+
+#### Troll Spawn Locations
+
+Trolls in the Ettenmoors spawn in the same fixed positions every time, and several quests require them. Since v4.3.2 these spawn points are marked on the map with a troll icon so they can be found quickly.
+
+The spawn list lives in the `troll_spawn_positions` table in `PvMP_Plus/MapWindow.lua`, using the same south/west map coordinates as the keep and travel markers. To add a new location:
+
+1. Note the in-game coordinates of the spawn, for example `18.2S, 19.8W`. The `/loc` command shows your current position.
+2. Add a new line to the table with the next index number:
+
+   ```lua
+   [21] = { ["s"] = 18.2, ["w"] = 19.8 },
+   ```
+
+3. Copy the updated `MapWindow.lua` into your LOTRO `Plugins/PvMP_Plus` folder and reload the plugin with `/plugins reload PvMP+`.
+
+The map covers roughly `10S` to `22S` and `8.2W` to `24.3W`. Coordinates outside that range will not be visible.
+
+The troll icon is `PvMP_Plus/Resources/MapIcons/troll.tga`. To replace it, save a new image as an uncompressed 32-bit TGA with an alpha channel and overwrite that file. The marker size is set in the `AddTrollMarker` and `ResizeIcons` functions in `MapWindow.lua`.
 
 German:
 

@@ -65,9 +65,29 @@ function MapWindow:Constructor()
 	self.show_own_position_overlay:SetText(L.Get_Own_Position)
 	self.show_own_position_overlay:SetMouseVisible(false)
 
+	-- Layer toggle buttons
+	local button_left = self.map_position_container:GetLeft()
+	local button_top = self.map_position_container:GetTop()
+	local button_step = self.map_position_container:GetHeight() + 5
+
+	self.toggle_teleports_button = self:CreateMapButton(button_left, button_top - 2 * button_step)
+	self.toggle_teleports_button.MouseClick = function(sender, args)
+		storage.map_teleports_hidden = not storage.map_teleports_hidden
+		self:SetTeleportsVisible(not storage.map_teleports_hidden)
+	end
+
+	self.toggle_trolls_button = self:CreateMapButton(button_left, button_top - button_step)
+	self.toggle_trolls_button.MouseClick = function(sender, args)
+		storage.map_trolls_hidden = not storage.map_trolls_hidden
+		self:SetTrollsVisible(not storage.map_trolls_hidden)
+	end
+
+	self:UpdateToggleButtonText()
+
 	self.keep_list = {}
 	self.hotspot_list = {}
 	self.port_list = {}
+	self.troll_list = {}
 	self.enemy_position_list = {}
 
 	local keep_positions = {
@@ -119,6 +139,34 @@ function MapWindow:Constructor()
 			(self.map:GetHeight() * (position.s - self.min_s) / self.dif_s - self.scale * self.hotspot_list[index]:GetHeight() / 2)
 		)
 		self.hotspot_list[index]:SetMouseVisible(false)
+	end
+
+	-- Troll spawn points.
+	local troll_spawn_positions = {
+		[1] = { ["s"] = 12.7, ["w"] = 19.4 },
+		[2] = { ["s"] = 14.1, ["w"] = 15.5 },
+		[3] = { ["s"] = 15.0, ["w"] = 14.3 },
+		[4] = { ["s"] = 15.2, ["w"] = 14.5 },
+		[5] = { ["s"] = 15.2, ["w"] = 14.2 },
+		[6] = { ["s"] = 18.2, ["w"] = 19.8 },
+		[7] = { ["s"] = 17.8, ["w"] = 19.4 },
+		[8] = { ["s"] = 17.5, ["w"] = 19.0 },
+		[9] = { ["s"] = 17.4, ["w"] = 18.6 },
+		[10] = { ["s"] = 17.4, ["w"] = 18.5 },
+		[11] = { ["s"] = 19.4, ["w"] = 15.7 },
+		[12] = { ["s"] = 19.5, ["w"] = 16.1 },
+		[13] = { ["s"] = 20.7, ["w"] = 17.5 },
+		[14] = { ["s"] = 21.0, ["w"] = 19.5 },
+		[15] = { ["s"] = 20.9, ["w"] = 20.0 },
+		[16] = { ["s"] = 20.1, ["w"] = 21.5 },
+		[17] = { ["s"] = 19.9, ["w"] = 21.4 },
+		[18] = { ["s"] = 18.2, ["w"] = 22.3 },
+		[19] = { ["s"] = 18.3, ["w"] = 22.4 },
+		[20] = { ["s"] = 18.4, ["w"] = 23.3 },
+	}
+
+	for index, position in pairs(troll_spawn_positions) do
+		self:AddTrollMarker(index, position)
 	end
 
 	local creep_port_positions = {
@@ -231,6 +279,9 @@ function MapWindow:ResizeIcons()
 	for index, port in pairs(self.port_list) do
 		port:SetSize(port:GetWidth() * self.scale + 2, port:GetHeight() * self.scale + 3)
 	end
+	for index, troll in pairs(self.troll_list) do
+		troll:SetSize(24 * self.scale + 2, 24 * self.scale + 2)
+	end
 	self.map_position_arrow:SetSize(28 * self.scale, 28 * self.scale)
 	self.map_position_arrow:SetVisible(true)
 	self.map_position_arrow:SetRotation({ x = 0, y = 0, z = 0 - (self.heading - 90) })
@@ -261,6 +312,72 @@ function MapWindow:AddMapQuickslots(index, map)
 			SecondaryWindow.map_button:SetText(L.Map_Show)
 		end
 	end
+
+	self.port_list[index]:SetVisible(not storage.map_teleports_hidden)
+end
+
+function MapWindow:AddTrollMarker(index, position)
+	local marker = Turbine.UI.Control()
+	marker:SetParent(self.map)
+	marker:SetSize(24, 24)
+	marker:SetStretchMode(1)
+	marker:SetBackground("PvMP_Plus/Resources/MapIcons/troll.tga")
+	marker:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend)
+	marker:SetMouseVisible(false)
+	marker:SetPosition(
+		(self.map:GetWidth() - self.map:GetWidth() * (position.w - self.min_w) / self.dif_w -
+			self.scale * marker:GetWidth() / 2),
+		(self.map:GetHeight() * (position.s - self.min_s) / self.dif_s - self.scale * marker:GetHeight() / 2)
+	)
+	marker:SetVisible(not storage.map_trolls_hidden)
+	self.troll_list[index] = marker
+end
+
+function MapWindow:CreateMapButton(left, top)
+	local button = Turbine.UI.Control()
+	button:SetParent(self)
+	button:SetStretchMode(3)
+	button:SetSize(155, 31)
+	button:SetPosition(left, top)
+
+	button.overlay = Turbine.UI.Label()
+	button.overlay:SetParent(button)
+	button.overlay:SetSize(button:GetSize())
+	button.overlay:SetForeColor(Default_Font_Color)
+	button.overlay:SetFont(Turbine.UI.Lotro.Font.TrajanPro14)
+	button.overlay:SetFontStyle(Turbine.UI.FontStyle.Outline)
+	button.overlay:SetBackground(0x4110932c)
+	button.overlay:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
+	button.overlay:SetMouseVisible(false)
+
+	return button
+end
+
+function MapWindow:UpdateToggleButtonText()
+	if storage.map_teleports_hidden then
+		self.toggle_teleports_button.overlay:SetText(L.Map_Show_Teleports)
+	else
+		self.toggle_teleports_button.overlay:SetText(L.Map_Hide_Teleports)
+	end
+	if storage.map_trolls_hidden then
+		self.toggle_trolls_button.overlay:SetText(L.Map_Show_Trolls)
+	else
+		self.toggle_trolls_button.overlay:SetText(L.Map_Hide_Trolls)
+	end
+end
+
+function MapWindow:SetTeleportsVisible(visible)
+	for index, port in pairs(self.port_list) do
+		port:SetVisible(visible)
+	end
+	self:UpdateToggleButtonText()
+end
+
+function MapWindow:SetTrollsVisible(visible)
+	for index, troll in pairs(self.troll_list) do
+		troll:SetVisible(visible)
+	end
+	self:UpdateToggleButtonText()
 end
 
 function MapWindow:MoveCurrentPosition(west, south, heading)

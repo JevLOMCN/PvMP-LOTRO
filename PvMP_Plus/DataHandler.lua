@@ -206,6 +206,9 @@ SetDefaults = function()
 	if storage.lootbox_alert_disabled == nil then storage.lootbox_alert_disabled = true end
 	if storage.battletask_warning_disabled == nil then storage.battletask_warning_disabled = true end
 
+	if storage.map_teleports_hidden == nil then storage.map_teleports_hidden = false end
+	if storage.map_trolls_hidden == nil then storage.map_trolls_hidden = false end
+
 	if data.numbers.resettime == nil then data.numbers.resettime = 0 end
 	if data.numbers.overview_width_ratio == nil then data.numbers.overview_width_ratio = 30000000000000 end
 	local fixed_ratio = data.numbers.overview_width_ratio / 100000000000000

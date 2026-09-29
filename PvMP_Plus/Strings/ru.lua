@@ -358,6 +358,10 @@ L.String_Send = "Отпр."
 L.Map_Show = "Показать карту"
 L.Map_Hide = "Скрыть карту"
 L.Get_Own_Position = "Показать свою позицию"
+L.Map_Show_Teleports = "Показать телепорты"
+L.Map_Hide_Teleports = "Скрыть телепорты"
+L.Map_Show_Trolls = "Показать троллей"
+L.Map_Hide_Trolls = "Скрыть троллей"
 
 L.Loc_Command = "/loc"	-- Translate
 L.Loc_Chat = ";loc"		-- Translate

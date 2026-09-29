@@ -222,6 +222,20 @@ The notes below are transcribed and formatted from the version histories publish
 
 ---
 
+# PvMP+ Revisited — JevLOMCN
+
+## v4.3.2 — 2026/09/29
+
+- Added troll spawn locations to the Ettenmoors map.
+  - Trolls spawn in fixed positions and are used by several quests, so their spawn points are now marked with a troll icon.
+  - Twenty spawn locations are included. Further locations can be added to the `troll_spawn_positions` table in `MapWindow.lua`; see the README for details.
+- Added "Hide/Show Teleports" and "Hide/Show Trolls" buttons to the map window, stacked above the "Show own position" button.
+  - Each button hides or shows its markers and updates its text to match.
+  - The chosen state is saved per character.
+- Added German, French and Russian translations for the new map buttons.
+
+---
+
 # PvMP+ Revisited — Urundus
 
 ## v4.3 — 2026/09/28
@@ -452,6 +466,7 @@ The following Alpha and Beta releases are included for historical completeness b
 | v4.1 | 2023/01/29 | Urundus | Statistics, UI, localization and tracking fixes |
 | v4.2 | 2023/03/26 | Urundus | Statistics, map, localization and UI fixes |
 | v4.3 | 2026/09/28 | Urundus | Forward Camps, Session Play, parser, filtering and localization updates |
+| v4.3.2 | 2026/09/29 | Jev | Troll spawn locations and map layer toggles |
 
 ---
 
