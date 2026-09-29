@@ -6,6 +6,12 @@ The plugin provides a comprehensive collection of tools for **Player versus Mons
 
 This repository contains an independently maintained and updated version of PvMP+ Revisited, with the goal of keeping the plugin functional and up to date with modern LOTRO client and PvMP changes.
 
+## Patch Notes
+
+For the complete historical development history of PvMP+, including all releases from **v1.0 through v3.3** by Glubby and **v4.0 through v4.3** of PvMP+ Revisited by Urundus, see:
+
+**[View Full Patch Notes](PATCH_NOTES.md)**
+
 ---
 
 ## Credits
