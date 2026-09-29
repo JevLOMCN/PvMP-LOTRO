@@ -9,219 +9,6 @@ The notes below are transcribed and formatted from the version histories publish
 
 ---
 
-# PvMP+ — Glubby
-
-## v3.3 — 2016/03/28
-
-- Updated French translations. Thank you Adra and Whaz!
-
-## v3.2 — 2015/12/11
-
-- Missed a file in the ZIP archive, which should fix the background image issue.
-
-## v3.1 — 2015/12/11
-
-- Updated the map to display the actual skill icons for the creep map in locations.
-  - If your character does not have the associated map skill, it will appear grayed out.
-- Updated the map to automatically close when you click a map skill.
-- Updated the X on the map to flash when another user sends the chat message identifying enemy locations.
-- Updated the plugin icon to be a hybrid of the Freep/Creep keep icons instead of the wolf.
-- Special thanks to Tangaar for the suggestions.
-
-## v3.0 — 2015/10/21
-
-- Corrected the Commendation cap to reflect the change to 15,000.
-- Added the ability to display enemy positions relative to known points, such as keeps and Outposts.
-  - Instead of simply clicking **Send** in the Recent Kill window, click **Pos**, then **Send**.
-  - The resulting message is displayed in the form of `Creeps 103m NW GV`.
-  - These positions do not appear on the displayable map.
-- Bug fixes.
-
-## v2.9 — 2014/05/01
-
-- Corrected the Delving of Frór buff displays when resizing the top bar.
-- Fixed a minor typo in kill messages.
-
-## v2.8 — 2014/04/18
-
-- Corrected the keep display for Tirith Rhaw following the U13 spelling fix.
-- Creep map locations are now visible to Freeps using the built-in map.
-  - The locations appear, but the skill shortcuts do not work for obvious reasons.
-- Kill messages now end with a randomly selected word instead of `Bazinga!`.
-  - There is a small selection of words which appear randomly after kills.
-  - The words were initially English-only.
-  - The author requested French, Russian and German word submissions from the community.
-  - No swear words.
-- Added Delving buff timers.
-  - The plugin displays how long your side has controlled the Delving of Frór buffs.
-  - Buff information is retrieved from the player's buff bar rather than directly from the server.
-  - Timers are therefore only accurate from the time you log in.
-  - When first entering the Moors after logging in, the timers begin at `0:00`.
-  - When your side does not control a buff, the plugin cannot determine whether the opposing side controls it or whether it has simply expired.
-  - Such buffs remain displayed on the opposing side to indicate that your side does not control them.
-
-## v2.7 — 2014/03/03
-
-- Corrected the keep display for Creeps.
-- The keep display should now work properly for Creep players.
-
-## v2.6 — 2014/02/22
-
-- Corrected the 3% and 5% Renown/Infamy buffs for controlling both relics and all five keeps.
-  - These should now work correctly at all times.
-- Updated the Lootbox alert trigger to activate for any type of Lootbox.
-  - This should prevent future breaks caused by Lootbox name changes.
-- Added icons to the top of the progress bar showing which keeps your side controls.
-  - Blue fire icons on the left show Free People-controlled keeps.
-  - Red fire icons on the right show Monster-controlled keeps.
-  - Each icon includes a two-letter abbreviation for the keep.
-- Added more alert messages for:
-  - Detecting nearby creatures.
-  - Detecting hidden creatures.
-  - Delivering a Killing Blow.
-- Thanks to PulseDiver for the contributions.
-
-## v2.5 — 2013/12/20
-
-- Added the 100% Renown/Infamy buff from store-bought buffs or Bounder's Bounty.
-- Added the 5% Renown/Infamy buff for controlling both relics and all five keeps.
-- Updated the plugin so Eorlingas Lootboxes trigger the alert message.
-- Updated the Outpost display to provide more information at a glance.
-  - The blue/red lines at the top of the display now show a letter identifying controlled Outposts:
-    - `A` = Arador's
-    - `I` = Isendeep
-    - `R` = River
-    - `H` = Hithlad
-  - This removes the need to open the map just to determine which Outposts are controlled.
-
-## v2.4 — 2013/03/18
-
-- Added the ability to customize the daily statistics reset time.
-- Commendations and Lootboxes/keys are tracked again following the U10 chat channel changes.
-
-## v2.3 — 2013/02/20
-
-- Updated Russian translation.
-- Added detection of user-chat names.
-- Added Lootbox/key alerts.
-- Added totals for victims and kills in the statistics window.
-- Multiple bug fixes.
-- Performance improvements.
-
-## v2.2 — 2013/01/13
-
-- Added a new map window.
-  - Shows the current situation in the Ettenmoors.
-  - Players can post their position so other PvMP+ users can see it on their map.
-  - Added the ability to port via the map.
-- Added a new helper window.
-  - Displays the last five Killing Blows.
-- Added the ability to post to UserChats.
-- Several other improvements.
-- The author noted that substantial changes were made to both new and old code and warned that bugs were likely. Users were asked to report issues.
-
-## v2.1.1 — 2013/01/13
-
-- Bug fixes.
-
-## v2.1 — 2013/01/11
-
-- Added a new display showing how many Outposts your side controls.
-- Added a filter function to the kills list.
-- Added Commendation tracking.
-  - Commendation information can be displayed by hovering over the Commendations icon.
-
-## v2.0.1 — 2012/12/29
-
-- Updated the bottom diagram so that it matches the top diagram.
-- Added the `+3%` buff name on the Free People side.
-
-## v2.0 — 2012/12/26
-
-- Added a new diagram panel to the statistics window.
-- Killing Blows list now jumps to the beginning after opening the panel or resorting the list.
-- Various other improvements.
-
-## v1.9 — 2012/12/16
-
-- Added a new Statistics Window.
-- Added a list of Killing Blows.
-  - Kills made by pets, traps and similar sources cannot be tracked.
-- Added Russian translation. Thanks to PulseDiver!
-- Several minor improvements.
-
-## v1.8 — 2012/12/08
-
-- Commendation warning now flashes faster when Commendations exceed 9,500.
-- Added a warning when you are being tracked.
-  - English, German and Russian clients only.
-- Added a notice about percentage reputation increases.
-  - English and German clients only.
-- Small fixes and improvements.
-
-## v1.7 — 2012/08/09
-
-- Added the ability to choose which statistics are posted to chat.
-- Added an option to disable the warning when having more than 9,000 Commendations.
-- Small bug fix.
-
-## v1.6 — 2012/08/06
-
-- Added the ability to post statistics to chat by clicking the new button at the top right.
-- Right-clicking the button opens a menu for selecting the chat channel.
-- French client support for the chat channel shortcuts was not yet fully tested.
-
-## v1.5 — 2012/06/05
-
-- PvMP+ now works with French clients.
-- Added the ability to switch to **points to rank up** by clicking the `total points` text.
-- Points earned in the last hour / 10 minutes no longer reset when the plugin is unloaded.
-- Improved crash handling.
-  - Data is now saved permanently.
-- Minor fixes and improvements.
-
-## v1.4 — 2012/05/22
-
-- Added buttons for faster access to options and minimizing the window.
-- Window is now resizable.
-- Minor improvements.
-
-## v1.3 — 2012/05/19
-
-- Several visual and functional improvements.
-- Added statistics.
-- Added Settings Window.
-- Added the `/pvmp+ settings` command.
-  - German clients use `/pvmp+ einstellungen`.
-- Added a warning when Commendations exceed 9,000.
-- Fixed several bugs.
-- Added crash detection.
-  - Displays information if data becomes out of sync and requires the player to re-enter their current points.
-
-## v1.2 — 2012/05/17
-
-- Fixed a saving/loading bug affecting the German client.
-- Added Rank and Commendation icons.
-
-## v1.1 — 2012/05/15
-
-- PvMP+ now saves data so points do not need to be entered every time you log in.
-- Added an options menu in the Plugin Manager allowing users to:
-  - Manually set, reset or correct their points.
-  - Reset settings, such as the window position.
-
-## v1.0 — 2012/05/15
-
-- Initial release.
-- Tracks the total amount of Infamy/Renown.
-- Added a progress bar showing progress to the next rank.
-- Displays the percentage completed towards the next rank.
-- Supports English and German clients.
-- Supports both Free People and Monster Player sides.
-- Window can be positioned freely.
-
----
-
 # PvMP+ Revisited — JevLOMCN
 
 ## v4.3.2 — 2026/09/29
@@ -467,6 +254,219 @@ The following Alpha and Beta releases are included for historical completeness b
 | v4.2 | 2023/03/26 | Urundus | Statistics, map, localization and UI fixes |
 | v4.3 | 2026/09/28 | Urundus | Forward Camps, Session Play, parser, filtering and localization updates |
 | v4.3.2 | 2026/09/29 | Jev | Troll spawn locations and map layer toggles |
+
+---
+
+# PvMP+ — Glubby
+
+## v3.3 — 2016/03/28
+
+- Updated French translations. Thank you Adra and Whaz!
+
+## v3.2 — 2015/12/11
+
+- Missed a file in the ZIP archive, which should fix the background image issue.
+
+## v3.1 — 2015/12/11
+
+- Updated the map to display the actual skill icons for the creep map in locations.
+  - If your character does not have the associated map skill, it will appear grayed out.
+- Updated the map to automatically close when you click a map skill.
+- Updated the X on the map to flash when another user sends the chat message identifying enemy locations.
+- Updated the plugin icon to be a hybrid of the Freep/Creep keep icons instead of the wolf.
+- Special thanks to Tangaar for the suggestions.
+
+## v3.0 — 2015/10/21
+
+- Corrected the Commendation cap to reflect the change to 15,000.
+- Added the ability to display enemy positions relative to known points, such as keeps and Outposts.
+  - Instead of simply clicking **Send** in the Recent Kill window, click **Pos**, then **Send**.
+  - The resulting message is displayed in the form of `Creeps 103m NW GV`.
+  - These positions do not appear on the displayable map.
+- Bug fixes.
+
+## v2.9 — 2014/05/01
+
+- Corrected the Delving of Frór buff displays when resizing the top bar.
+- Fixed a minor typo in kill messages.
+
+## v2.8 — 2014/04/18
+
+- Corrected the keep display for Tirith Rhaw following the U13 spelling fix.
+- Creep map locations are now visible to Freeps using the built-in map.
+  - The locations appear, but the skill shortcuts do not work for obvious reasons.
+- Kill messages now end with a randomly selected word instead of `Bazinga!`.
+  - There is a small selection of words which appear randomly after kills.
+  - The words were initially English-only.
+  - The author requested French, Russian and German word submissions from the community.
+  - No swear words.
+- Added Delving buff timers.
+  - The plugin displays how long your side has controlled the Delving of Frór buffs.
+  - Buff information is retrieved from the player's buff bar rather than directly from the server.
+  - Timers are therefore only accurate from the time you log in.
+  - When first entering the Moors after logging in, the timers begin at `0:00`.
+  - When your side does not control a buff, the plugin cannot determine whether the opposing side controls it or whether it has simply expired.
+  - Such buffs remain displayed on the opposing side to indicate that your side does not control them.
+
+## v2.7 — 2014/03/03
+
+- Corrected the keep display for Creeps.
+- The keep display should now work properly for Creep players.
+
+## v2.6 — 2014/02/22
+
+- Corrected the 3% and 5% Renown/Infamy buffs for controlling both relics and all five keeps.
+  - These should now work correctly at all times.
+- Updated the Lootbox alert trigger to activate for any type of Lootbox.
+  - This should prevent future breaks caused by Lootbox name changes.
+- Added icons to the top of the progress bar showing which keeps your side controls.
+  - Blue fire icons on the left show Free People-controlled keeps.
+  - Red fire icons on the right show Monster-controlled keeps.
+  - Each icon includes a two-letter abbreviation for the keep.
+- Added more alert messages for:
+  - Detecting nearby creatures.
+  - Detecting hidden creatures.
+  - Delivering a Killing Blow.
+- Thanks to PulseDiver for the contributions.
+
+## v2.5 — 2013/12/20
+
+- Added the 100% Renown/Infamy buff from store-bought buffs or Bounder's Bounty.
+- Added the 5% Renown/Infamy buff for controlling both relics and all five keeps.
+- Updated the plugin so Eorlingas Lootboxes trigger the alert message.
+- Updated the Outpost display to provide more information at a glance.
+  - The blue/red lines at the top of the display now show a letter identifying controlled Outposts:
+    - `A` = Arador's
+    - `I` = Isendeep
+    - `R` = River
+    - `H` = Hithlad
+  - This removes the need to open the map just to determine which Outposts are controlled.
+
+## v2.4 — 2013/03/18
+
+- Added the ability to customize the daily statistics reset time.
+- Commendations and Lootboxes/keys are tracked again following the U10 chat channel changes.
+
+## v2.3 — 2013/02/20
+
+- Updated Russian translation.
+- Added detection of user-chat names.
+- Added Lootbox/key alerts.
+- Added totals for victims and kills in the statistics window.
+- Multiple bug fixes.
+- Performance improvements.
+
+## v2.2 — 2013/01/13
+
+- Added a new map window.
+  - Shows the current situation in the Ettenmoors.
+  - Players can post their position so other PvMP+ users can see it on their map.
+  - Added the ability to port via the map.
+- Added a new helper window.
+  - Displays the last five Killing Blows.
+- Added the ability to post to UserChats.
+- Several other improvements.
+- The author noted that substantial changes were made to both new and old code and warned that bugs were likely. Users were asked to report issues.
+
+## v2.1.1 — 2013/01/13
+
+- Bug fixes.
+
+## v2.1 — 2013/01/11
+
+- Added a new display showing how many Outposts your side controls.
+- Added a filter function to the kills list.
+- Added Commendation tracking.
+  - Commendation information can be displayed by hovering over the Commendations icon.
+
+## v2.0.1 — 2012/12/29
+
+- Updated the bottom diagram so that it matches the top diagram.
+- Added the `+3%` buff name on the Free People side.
+
+## v2.0 — 2012/12/26
+
+- Added a new diagram panel to the statistics window.
+- Killing Blows list now jumps to the beginning after opening the panel or resorting the list.
+- Various other improvements.
+
+## v1.9 — 2012/12/16
+
+- Added a new Statistics Window.
+- Added a list of Killing Blows.
+  - Kills made by pets, traps and similar sources cannot be tracked.
+- Added Russian translation. Thanks to PulseDiver!
+- Several minor improvements.
+
+## v1.8 — 2012/12/08
+
+- Commendation warning now flashes faster when Commendations exceed 9,500.
+- Added a warning when you are being tracked.
+  - English, German and Russian clients only.
+- Added a notice about percentage reputation increases.
+  - English and German clients only.
+- Small fixes and improvements.
+
+## v1.7 — 2012/08/09
+
+- Added the ability to choose which statistics are posted to chat.
+- Added an option to disable the warning when having more than 9,000 Commendations.
+- Small bug fix.
+
+## v1.6 — 2012/08/06
+
+- Added the ability to post statistics to chat by clicking the new button at the top right.
+- Right-clicking the button opens a menu for selecting the chat channel.
+- French client support for the chat channel shortcuts was not yet fully tested.
+
+## v1.5 — 2012/06/05
+
+- PvMP+ now works with French clients.
+- Added the ability to switch to **points to rank up** by clicking the `total points` text.
+- Points earned in the last hour / 10 minutes no longer reset when the plugin is unloaded.
+- Improved crash handling.
+  - Data is now saved permanently.
+- Minor fixes and improvements.
+
+## v1.4 — 2012/05/22
+
+- Added buttons for faster access to options and minimizing the window.
+- Window is now resizable.
+- Minor improvements.
+
+## v1.3 — 2012/05/19
+
+- Several visual and functional improvements.
+- Added statistics.
+- Added Settings Window.
+- Added the `/pvmp+ settings` command.
+  - German clients use `/pvmp+ einstellungen`.
+- Added a warning when Commendations exceed 9,000.
+- Fixed several bugs.
+- Added crash detection.
+  - Displays information if data becomes out of sync and requires the player to re-enter their current points.
+
+## v1.2 — 2012/05/17
+
+- Fixed a saving/loading bug affecting the German client.
+- Added Rank and Commendation icons.
+
+## v1.1 — 2012/05/15
+
+- PvMP+ now saves data so points do not need to be entered every time you log in.
+- Added an options menu in the Plugin Manager allowing users to:
+  - Manually set, reset or correct their points.
+  - Reset settings, such as the window position.
+
+## v1.0 — 2012/05/15
+
+- Initial release.
+- Tracks the total amount of Infamy/Renown.
+- Added a progress bar showing progress to the next rank.
+- Displays the percentage completed towards the next rank.
+- Supports English and German clients.
+- Supports both Free People and Monster Player sides.
+- Window can be positioned freely.
 
 ---
 
