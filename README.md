@@ -332,6 +332,41 @@ Known issues will be documented in the repository's **Issues** section.
 
 ---
 
+## Screenshots
+
+### Progress Bar
+
+![PvMP+ Progress Bar](https://www.lotrointerface.com/downloads/small3626.jpg)
+
+The main PvMP+ progress bar displaying PvMP rank, Infamy/Renown, Commendations, Outposts, Keeps, buffs and other PvMP information.
+
+---
+
+### Statistics Window
+
+![PvMP+ Statistics Window](https://www.lotrointerface.com/downloads/small3659.jpg)
+
+The Statistics Window provides detailed PvMP statistics, including Killing Blows, Deaths, Tracks, Commendations and historical statistics.
+
+---
+
+### Map Window and Secondary Windows
+
+![PvMP+ Map Window and Secondary Windows](https://www.lotrointerface.com/downloads/small3660.jpg)
+
+The Map Window provides an overview of the Ettenmoors, including Keeps, Outposts, map locations and PvMP callouts. Secondary windows provide additional PvMP information and tracking.
+
+---
+
+### Settings Window
+
+![PvMP+ Settings Window](https://www.lotrointerface.com/downloads/small3661.jpg)
+
+The Settings Window allows players to configure the PvMP+ interface, displays, alerts, statistics and other plugin functionality.
+
+#### *Screenshots originally published with PvMP+ Revisited on LoTROInterface.*
+---
+
 ## Development
 
 PvMP+ is written using the LOTRO Lua Plugin API.
